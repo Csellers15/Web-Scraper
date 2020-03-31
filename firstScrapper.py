@@ -17,12 +17,8 @@ extracted_records = []
 for link in links: 
     title = link.text
     url = link['href']
-    #There are better ways to check if a URL is absolute in Python. For sake simplicity we'll just stick to .startwith method of a string 
-    # https://stackoverflow.com/questions/8357098/how-can-i-check-if-a-url-is-absolute-using-python 
     if not url.startswith('http'):
         url = "https://reddit.com"+url 
-    # You can join urls better using urlparse library of python. 
-    # https://docs.python.org/3/library/urllib.parse.html#urllib.parse.urljoin 
     record = {
         'title':title,
         'url':url
